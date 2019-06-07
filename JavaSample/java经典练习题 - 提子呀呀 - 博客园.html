@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.cnblogs.com/grape/p/3250529.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="origin">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>java经典练习题 - 提子呀呀 - 博客园</title>
+    <meta property="og:description" content="1.1 问题 实现两个变量间的数据交换，例如：有两个整数类型变量a和b，现需要使变量a的值和变量b的值进行交换。例如： a的原值为100，b的原值为200，交换后a的值为200，b的值为100。 不使">
+    <link type="text/css" rel="stylesheet" href="./java经典练习题 - 提子呀呀 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./java经典练习题 - 提子呀呀 - 博客园_files/bundle-AnotherEon001.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./java经典练习题 - 提子呀呀 - 博客园_files/bundle-AnotherEon001-mobile.css">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/grape/rss">
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/grape/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/grape/wlwmanifest.xml">
+    <script async="" src="./java经典练习题 - 提子呀呀 - 博客园_files/analytics.js.下载"></script><script type="text/javascript" src="./java经典练习题 - 提子呀呀 - 博客园_files/encoder.js.下载"></script><script src="./java经典练习题 - 提子呀呀 - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script>var currentBlogId=159286;var currentBlogApp='grape',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="./java经典练习题 - 提子呀呀 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/grape/">~在平凡的路上，遇见不平凡的自己~</a></h1>
+<div id="subtitle"></div>
+</div>
+<div id="sub"><div id="blog_stats">
+<div class="BlogStats">随笔 - 17, 文章 - 0, 评论 - 0, 引用 - 0</div>
+</div></div>
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+        <div id="post_detail">
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="https://www.cnblogs.com/grape/p/3250529.html">java经典练习题</a>
+		</h2>
+		<div class="postbody">
+		<div id="cnblogs_post_body" class="blogpost-body"><p>&nbsp;</p>
+<h3>1.1 问题</h3>
+<p>　　实现两个变量间的数据交换，例如：有两个整数类型变量a和b，现需要使变量a的值和变量b的值进行交换。例如： a的原值为100，b的原值为200，交换后a的值为200，b的值为100。</p>
+<p><span>　　不使用中间变量来实现数据交换程序，即实现两个变量值的交换。可以先把a+b值赋给a，接着把a-b的值赋给b，最后把a-b的值在赋给a，请看如下代码：</span></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> SwapExt {
+</span><span style="color: #008080;"> 2</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;"> 3</span>         <span style="color: #0000ff;">int</span> a = 100<span style="color: #000000;">;
+</span><span style="color: #008080;"> 4</span>         <span style="color: #0000ff;">int</span> b = 200<span style="color: #000000;">;
+</span><span style="color: #008080;"> 5</span>         System.out.println("a=" + a + ", b=" +<span style="color: #000000;"> b);
+</span><span style="color: #008080;"> 6</span>         a = a +<span style="color: #000000;"> b;
+</span><span style="color: #008080;"> 7</span>         b = a -<span style="color: #000000;"> b;
+</span><span style="color: #008080;"> 8</span>         a = a -<span style="color: #000000;"> b;
+</span><span style="color: #008080;"> 9</span>         System.out.println("a=" + a + ", b=" +<span style="color: #000000;"> b);
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">11</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h3>2.1 问题</h3>
+<p>　　使用交互的方式计算自由落体运动中物体的位置。用户从控制台输入自由落体的时间t，系统计算经过时间t物体的自由落体位移。计算结果保留一位小数并且输出到控制台。自由落体位移公式为： s = 1/2 × g × t2 ，其中：</p>
+<p>s (位移（m）</p>
+<p>t (时间（s）</p>
+<p>g (重力加速度（9.8m/s2）</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Scanner;
+</span><span style="color: #008080;"> 2</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> FreeFall {
+</span><span style="color: #008080;"> 3</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;"> 4</span>         Scanner scanner = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Scanner(System.in);
+</span><span style="color: #008080;"> 5</span>         <span style="color: #0000ff;">double</span> g = 9.80<span style="color: #000000;">;
+</span><span style="color: #008080;"> 6</span>         System.out.println("请输入自由下落的时间（秒）："<span style="color: #000000;">);
+</span><span style="color: #008080;"> 7</span>         <span style="color: #0000ff;">double</span> t =<span style="color: #000000;"> scanner.nextDouble();
+</span><span style="color: #008080;"> 8</span>         <span style="color: #0000ff;">double</span> s = 0.5 * g * t *<span style="color: #000000;"> t;
+</span><span style="color: #008080;"> 9</span>         s = Math.round(10 * s) / 10.0<span style="color: #000000;">;//保留一位小数
+</span><span style="color: #008080;">10</span>         System.out.println(t + "秒后，物体自由下落了" + s + "米"<span style="color: #000000;">);
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">12</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h3>3.1 问题</h3>
+<p>　　系统使用交互的方式给三个数字进行排序。例如：接收用户输入的三个整数a，b，c，a的原值是20，b的原值是5，c的原值是10，排序后a的值为5，b的值为10，c的值为20。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div><ol class="snippet-num">
+<li><span class="sh_preproc">import</span> java<span class="sh_symbol">.</span>util<span class="sh_symbol">.</span>Scanner<span class="sh_symbol">;</span></li>
+<li><span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class="sh_classname">MaxofThree</span> <span class="sh_cbracket">{</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class="sh_type">void</span> <span class="sh_function">main</span><span class="sh_symbol">(</span>String<span class="sh_symbol">[]</span> args<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_usertype">Scanner</span>scanner <span class="sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Scanner</span><span class="sh_symbol">(</span>System<span class="sh_symbol">.</span>in<span class="sh_symbol">);</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class="sh_function">println</span><span class="sh_symbol">(</span><span class="sh_string">"请依次输入三个整数：a，b，c（以空格隔开）"</span><span class="sh_symbol">);</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_type">int</span> a <span class="sh_symbol">=</span> scanner<span class="sh_symbol">.</span><span class="sh_function">nextInt</span><span class="sh_symbol">();</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_type">int</span> b <span class="sh_symbol">=</span> scanner<span class="sh_symbol">.</span><span class="sh_function">nextInt</span><span class="sh_symbol">();</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_type">int</span> c <span class="sh_symbol">=</span> scanner<span class="sh_symbol">.</span><span class="sh_function">nextInt</span><span class="sh_symbol">();</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanner<span class="sh_symbol">.</span><span class="sh_function">close</span><span class="sh_symbol">();</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class="sh_function">println</span><span class="sh_symbol">(</span><span class="sh_string">"a="</span> <span class="sh_symbol">+</span> a <span class="sh_symbol">+</span> <span class="sh_string">", b="</span> <span class="sh_symbol">+</span> b <span class="sh_symbol">+</span> <span class="sh_string">", c="</span> <span class="sh_symbol">+</span> c<span class="sh_symbol">);</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_type">int</span> temp <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_keyword">if</span> <span class="sh_symbol">(</span>a <span class="sh_symbol">&gt;</span> b<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp <span class="sh_symbol">=</span> a<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a <span class="sh_symbol">=</span> b<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b <span class="sh_symbol">=</span> temp<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_cbracket">}</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_keyword">if</span> <span class="sh_symbol">(</span>a <span class="sh_symbol">&gt;</span> c<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp <span class="sh_symbol">=</span> a<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a <span class="sh_symbol">=</span> c<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c <span class="sh_symbol">=</span> temp<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_cbracket">}</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_keyword">if</span> <span class="sh_symbol">(</span>b <span class="sh_symbol">&gt;</span> c<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp <span class="sh_symbol">=</span> b<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b <span class="sh_symbol">=</span> c<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c <span class="sh_symbol">=</span> temp<span class="sh_symbol">;</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_cbracket">}</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class="sh_function">println</span><span class="sh_symbol">(</span><span class="sh_string">"a="</span> <span class="sh_symbol">+</span> a <span class="sh_symbol">+</span> <span class="sh_string">", b="</span> <span class="sh_symbol">+</span> b <span class="sh_symbol">+</span> <span class="sh_string">", c="</span> <span class="sh_symbol">+</span> c<span class="sh_symbol">);</span></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="sh_cbracket">}</span></li>
+<li><span class="sh_cbracket">}</span></li>
+</ol><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h1>水仙花数问题</h1>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Scanner;
+</span><span style="color: #008080;"> 2</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Test { 
+</span><span style="color: #008080;"> 3</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;"> 4</span> <span style="color: #008000;">     * 业务要求：计算某个范围内所有水仙花数
+</span><span style="color: #008080;"> 5</span> <span style="color: #008000;">     * 分析：1、找某个范围的水仙花数需要把这个范围内的每个数取出来判断，所以需要一个for循环取数，
+</span><span style="color: #008080;"> 6</span> <span style="color: #008000;">     *         从1开始到控制台输入的值（定义为range）。
+</span><span style="color: #008080;"> 7</span> <span style="color: #008000;">     *         2、判断某个数是不是水仙花数需要将该数的每一位都取出来，取出来的方法是定义一个变量last，
+</span><span style="color: #008080;"> 8</span> <span style="color: #008000;">     *         用来存这个数对10的余数，然后该数/10再对10取余数。。。这也是个循环，直到这个数变成零循环
+</span><span style="color: #008080;"> 9</span> <span style="color: #008000;">     *         停止。所以我们定义一个变量num用来存取出来的i的值，每次取余后都对num进行/10操作，当
+</span><span style="color: #008080;">10</span> <span style="color: #008000;">     *         num==0时循环停止，便可以写出for(int num=i;num&gt;0;num/=10){}，取出来的每一位都要
+</span><span style="color: #008080;">11</span> <span style="color: #008000;">     *         求出自己的三次幂，再求和
+</span><span style="color: #008080;">12</span> <span style="color: #008000;">     *         3、得到的和sum需要与i比较，若相等，则打印出来
+</span><span style="color: #008080;">13</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;">15</span>         Scanner in = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Scanner(System.in);
+</span><span style="color: #008080;">16</span>         System.out.println("请输入查找水仙花的范围：0~"<span style="color: #000000;">);
+</span><span style="color: #008080;">17</span>         <span style="color: #0000ff;">int</span> range =<span style="color: #000000;"> in.nextInt();
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">        in.close();
+</span><span style="color: #008080;">19</span>         <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 1; i &lt; range; i++<span style="color: #000000;">) {
+</span><span style="color: #008080;">20</span>             <span style="color: #0000ff;">int</span> sum = 0;<span style="color: #008000;">//</span><span style="color: #008000;"> 注意变量定义和赋初值的位置</span>
+<span style="color: #008080;">21</span>             <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> num = i; num &gt; 0; num /= 10<span style="color: #000000;">) {
+</span><span style="color: #008080;">22</span>                 <span style="color: #0000ff;">int</span> last = num % 10<span style="color: #000000;">;
+</span><span style="color: #008080;">23</span>                 sum += last * last * last;<span style="color: #008000;">//</span><span style="color: #008000;"> 每一轮开始sum都要清零</span>
+<span style="color: #008080;">24</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">25</span>             <span style="color: #0000ff;">if</span> (sum ==<span style="color: #000000;"> i) {
+</span><span style="color: #008080;">26</span>                 System.out.println(i + "是水仙花数"<span style="color: #000000;">);
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">30</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h1>计算百钱买百鸡的问题</h1>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Test { 
+</span><span style="color: #008080;"> 2</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;"> 3</span> <span style="color: #008000;">     * 业务要求：计算百钱买百鸡
+</span><span style="color: #008080;"> 4</span> <span style="color: #008000;">     * 分析：假设公鸡x只，母鸡y只，小鸡z只，那么必须满足x+y+z=100,5x+3y+z/3=100，并且z能整除3。
+</span><span style="color: #008080;"> 5</span> <span style="color: #008000;">     *      用穷举法，从0开始一个一个带入去试，能满足条件就输出。
+</span><span style="color: #008080;"> 6</span> <span style="color: #008000;">     *      如果都是公鸡的话，100钱只能买20只，所以0&lt;=x&lt;20
+</span><span style="color: #008080;"> 7</span> <span style="color: #008000;">     *      如果是母鸡的话，100钱只能买30只，所以0&lt;=y&lt;300
+</span><span style="color: #008080;"> 8</span> <span style="color: #008000;">     *      如果是小鸡的话，就是100只减去x再减去y
+</span><span style="color: #008080;"> 9</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">10</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;">11</span>         <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> x=0;x&lt;20;x++<span style="color: #000000;">){
+</span><span style="color: #008080;">12</span>             <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> y=0;y&lt;30;y++<span style="color: #000000;">){
+</span><span style="color: #008080;">13</span>                 <span style="color: #0000ff;">int</span> z = 100-x-<span style="color: #000000;">y;
+</span><span style="color: #008080;">14</span>                 <span style="color: #0000ff;">if</span>((z%3==0)&amp;&amp;(5*x+3*y+z/3==100<span style="color: #000000;">)){
+</span><span style="color: #008080;">15</span>                     System.out.println("公鸡："+x+"，母鸡："+y+"，小鸡："+<span style="color: #000000;">z);
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">        }        
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">20</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h1>猜字母游戏</h1>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;">  1</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Random;
+</span><span style="color: #008080;">  2</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Scanner;
+</span><span style="color: #008080;">  3</span> 
+<span style="color: #008080;">  4</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Test {
+</span><span style="color: #008080;">  5</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">  6</span> <span style="color: #008000;">     * 业务要求：猜字母游戏
+</span><span style="color: #008080;">  7</span> <span style="color: #008000;">     *         系统随机产生5个不重复的字符，然后由用户输入一个5个字符的字符串，由程序判断这5个字符
+</span><span style="color: #008080;">  8</span> <span style="color: #008000;">     *         和系统产生的5是否相同（字母和位置均相同）。如果相同，程序结束，如果不相同， 则输出比较结果以提示用户继续游戏。 
+</span><span style="color: #008080;">  9</span> <span style="color: #008000;">     * 分析： 
+</span><span style="color: #008080;"> 10</span> <span style="color: #008000;">     *         1) char[] answer 被猜测字母序列 
+</span><span style="color: #008080;"> 11</span> <span style="color: #008000;">     *        2) char[] input 用输入的字母序列 
+</span><span style="color: #008080;"> 12</span> <span style="color: #008000;">     *        3) int count 猜测次数 
+</span><span style="color: #008080;"> 13</span> <span style="color: #008000;">     *        4) int[] result = {字符匹配数量，匹配成功位置} 用户输入的序列和被猜测序列的比较结果 
+</span><span style="color: #008080;"> 14</span> <span style="color: #008000;">     *功能分析设计：
+</span><span style="color: #008080;"> 15</span> <span style="color: #008000;">     *   1）随机生成 (generate)
+</span><span style="color: #008080;"> 16</span> <span style="color: #008000;">     *      方法算法功能描述：生成n个不重复的大写字母
+</span><span style="color: #008080;"> 17</span> <span style="color: #008000;">     *      char[] generate(int n)
+</span><span style="color: #008080;"> 18</span> <span style="color: #008000;">     *   2）用户输入(Input)
+</span><span style="color: #008080;"> 19</span> <span style="color: #008000;">     *          方法算法功能描述：从控制台读取输入，返回5个大写字符
+</span><span style="color: #008080;"> 20</span> <span style="color: #008000;">     *      char[] userInput()
+</span><span style="color: #008080;"> 21</span> <span style="color: #008000;">     *   3）检查(check)用户输入
+</span><span style="color: #008080;"> 22</span> <span style="color: #008000;">     *   方法算法功能描述：检查标准答案（answer）和用户输入
+</span><span style="color: #008080;"> 23</span> <span style="color: #008000;">     *   （input），返回结果：{字符匹配数量，匹配成功位置} 
+</span><span style="color: #008080;"> 24</span> <span style="color: #008000;">     *      int[] check(char[] answer, char[] input)
+</span><span style="color: #008080;"> 25</span> <span style="color: #008000;">     *   4）提示猜中情况
+</span><span style="color: #008080;"> 26</span> <span style="color: #008000;">     *     void show(int count, int[] result)
+</span><span style="color: #008080;"> 27</span> <span style="color: #008000;">     *   5) main 方法完成猜测流程控制
+</span><span style="color: #008080;"> 28</span> <span style="color: #008000;">     *         1）"生成答案"字符序列：5个字符
+</span><span style="color: #008080;"> 29</span> <span style="color: #008000;">     *         2）等待用户的答案输入
+</span><span style="color: #008080;"> 30</span> <span style="color: #008000;">     *         3）"检查用户输入"的答案，检查结果包含 匹配数量和匹配位置
+</span><span style="color: #008080;"> 31</span> <span style="color: #008000;">     *         4) 统计回答数量
+</span><span style="color: #008080;"> 32</span> <span style="color: #008000;">     *         5) 提示检查结果, 返回 (2)
+</span><span style="color: #008080;"> 33</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;"> 34</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;"> 35</span>         <span style="color: #0000ff;">char</span><span style="color: #000000;">[] answer;
+</span><span style="color: #008080;"> 36</span>         <span style="color: #0000ff;">char</span><span style="color: #000000;">[] input;
+</span><span style="color: #008080;"> 37</span>         <span style="color: #0000ff;">int</span> count=0<span style="color: #000000;">;
+</span><span style="color: #008080;"> 38</span>         <span style="color: #0000ff;">int</span><span style="color: #000000;">[] result;
+</span><span style="color: #008080;"> 39</span>         answer = generate(5);<span style="color: #008000;">//</span><span style="color: #008000;">1)“生成答案”字符序列：5个字符</span>
+<span style="color: #008080;"> 40</span> <span style="color: #000000;">        System.out.println(answer);
+</span><span style="color: #008080;"> 41</span>         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<span style="color: #000000;">);
+</span><span style="color: #008080;"> 42</span>         System.out.println("\t欢迎使用猜字母游戏"<span style="color: #000000;">);
+</span><span style="color: #008080;"> 43</span>         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<span style="color: #000000;">);
+</span><span style="color: #008080;"> 44</span>         <span style="color: #0000ff;">while</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {
+</span><span style="color: #008080;"> 45</span>             input = userInput();<span style="color: #008000;">//</span><span style="color: #008000;">2)等待用户的答案输入</span>
+<span style="color: #008080;"> 46</span>             result = check(answer,input);<span style="color: #008000;">//</span><span style="color: #008000;">“检查用户输入”的答案</span>
+<span style="color: #008080;"> 47</span>             count++<span style="color: #000000;">;
+</span><span style="color: #008080;"> 48</span>             show(count, result);<span style="color: #008000;">//</span><span style="color: #008000;">提示检查结果</span>
+<span style="color: #008080;"> 49</span>             <span style="color: #0000ff;">if</span>(result[0]==5&amp;&amp;result[1]==5<span style="color: #000000;">){
+</span><span style="color: #008080;"> 50</span>                 <span style="color: #0000ff;">break</span>;<span style="color: #008000;">//</span><span style="color: #008000;">猜对退出</span>
+<span style="color: #008080;"> 51</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;"> 52</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;"> 53</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;"> 54</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">char</span>[] generate(<span style="color: #0000ff;">int</span><span style="color: #000000;"> n) {
+</span><span style="color: #008080;"> 55</span>         Random r = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Random();
+</span><span style="color: #008080;"> 56</span>         <span style="color: #0000ff;">char</span>[] letter = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">char</span>[26<span style="color: #000000;">];
+</span><span style="color: #008080;"> 57</span>         <span style="color: #0000ff;">char</span>[] answer = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">char</span>[5<span style="color: #000000;">];
+</span><span style="color: #008080;"> 58</span>         <span style="color: #0000ff;">boolean</span>[] used = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">boolean</span><span style="color: #000000;">[letter.length];
+</span><span style="color: #008080;"> 59</span>         <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; 26; i++<span style="color: #000000;">) {
+</span><span style="color: #008080;"> 60</span>             letter[i] = (<span style="color: #0000ff;">char</span>) (i + 65<span style="color: #000000;">);
+</span><span style="color: #008080;"> 61</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;"> 62</span>         <span style="color: #0000ff;">int</span> num,index=0<span style="color: #000000;">;
+</span><span style="color: #008080;"> 63</span>         <span style="color: #0000ff;">do</span><span style="color: #000000;">{
+</span><span style="color: #008080;"> 64</span>             num =<span style="color: #000000;"> r.nextInt(letter.length);
+</span><span style="color: #008080;"> 65</span>             <span style="color: #0000ff;">if</span><span style="color: #000000;">(used[num]){
+</span><span style="color: #008080;"> 66</span>                 <span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 67</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;"> 68</span>             answer[index++] =<span style="color: #000000;"> letter[num];
+</span><span style="color: #008080;"> 69</span>             used[num] = <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 70</span>         }<span style="color: #0000ff;">while</span>(index!=<span style="color: #000000;">n);
+</span><span style="color: #008080;"> 71</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> answer;
+</span><span style="color: #008080;"> 72</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;"> 73</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">char</span><span style="color: #000000;">[] userInput() {
+</span><span style="color: #008080;"> 74</span>         Scanner in = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Scanner(System.in);
+</span><span style="color: #008080;"> 75</span>         <span style="color: #0000ff;">char</span>[] input = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">char</span>[5<span style="color: #000000;">];
+</span><span style="color: #008080;"> 76</span>         String str =<span style="color: #000000;"> in.nextLine();
+</span><span style="color: #008080;"> 77</span>         <span style="color: #0000ff;">while</span> (str.length() != 5<span style="color: #000000;">) {
+</span><span style="color: #008080;"> 78</span>             System.out.println("您输入的字母长度不对，请重新输入"<span style="color: #000000;">);
+</span><span style="color: #008080;"> 79</span>             str =<span style="color: #000000;"> in.nextLine();
+</span><span style="color: #008080;"> 80</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;"> 81</span>         input =<span style="color: #000000;"> str.toCharArray();
+</span><span style="color: #008080;"> 82</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> input;
+</span><span style="color: #008080;"> 83</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;"> 84</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">int</span>[] check(<span style="color: #0000ff;">char</span>[] answer, <span style="color: #0000ff;">char</span><span style="color: #000000;">[] input) {
+</span><span style="color: #008080;"> 85</span>         <span style="color: #0000ff;">int</span>[] result = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">int</span>[2<span style="color: #000000;">];
+</span><span style="color: #008080;"> 86</span>         <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; answer.length; i++<span style="color: #000000;">) {
+</span><span style="color: #008080;"> 87</span>             <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> j = 0; j &lt; input.length; j++<span style="color: #000000;">) {
+</span><span style="color: #008080;"> 88</span>                 <span style="color: #0000ff;">if</span> (input[j] ==<span style="color: #000000;"> answer[i]) {
+</span><span style="color: #008080;"> 89</span>                     result[0]++<span style="color: #000000;">;
+</span><span style="color: #008080;"> 90</span>                     <span style="color: #0000ff;">if</span> (j ==<span style="color: #000000;"> i) {
+</span><span style="color: #008080;"> 91</span>                         result[1]++<span style="color: #000000;">;
+</span><span style="color: #008080;"> 92</span> <span style="color: #000000;">                    }
+</span><span style="color: #008080;"> 93</span>                     <span style="color: #0000ff;">break</span>;<span style="color: #008000;">//</span><span style="color: #008000;">一旦找到一样的，就不用继续比对了</span>
+<span style="color: #008080;"> 94</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;"> 95</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;"> 96</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;"> 97</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> result;
+</span><span style="color: #008080;"> 98</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;"> 99</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span> show(<span style="color: #0000ff;">int</span> count,<span style="color: #0000ff;">int</span><span style="color: #000000;">[] result) {
+</span><span style="color: #008080;">100</span>         System.out.println("猜测"+count+"次"<span style="color: #000000;">);
+</span><span style="color: #008080;">101</span>         System.out.println("你猜对了" + result[0] + "个字符，其中" + result[1<span style="color: #000000;">]
+</span><span style="color: #008080;">102</span>                 + "个字符位置正确"<span style="color: #000000;">);
+</span><span style="color: #008080;">103</span>         <span style="color: #0000ff;">if</span>(result[0]==5&amp;&amp;result[1]==5<span style="color: #000000;">){
+</span><span style="color: #008080;">104</span>             System.out.println("恭喜，猜中！"<span style="color: #000000;">);
+</span><span style="color: #008080;">105</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">106</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">107</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h1>求质数</h1>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Test {
+</span><span style="color: #008080;"> 2</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;"> 3</span> <span style="color: #008000;">     * 业务要求：求某个范围内的所有质数
+</span><span style="color: #008080;"> 4</span> <span style="color: #008000;">     *         质数是只有1和自己本身两个约数的整数
+</span><span style="color: #008080;"> 5</span> <span style="color: #008000;">     * 
+</span><span style="color: #008080;"> 6</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;"> 7</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;"> 8</span>         Scanner in = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Scanner(System.in);
+</span><span style="color: #008080;"> 9</span>         System.out.println("请输入查找质数的范围：2~"<span style="color: #000000;">);
+</span><span style="color: #008080;">10</span>         <span style="color: #0000ff;">int</span> num =<span style="color: #000000;"> in.nextInt();
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">        in.close();
+</span><span style="color: #008080;">12</span>         <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i=2;i&lt;num;i++<span style="color: #000000;">){
+</span><span style="color: #008080;">13</span>             <span style="color: #0000ff;">boolean</span> isPrime = <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+</span><span style="color: #008080;">14</span>             <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j=2;j&lt;=(<span style="color: #0000ff;">int</span>)Math.sqrt(i);j++<span style="color: #000000;">){
+</span><span style="color: #008080;">15</span>                 System.out.println("......"+(<span style="color: #0000ff;">int</span><span style="color: #000000;">)Math.sqrt(i));
+</span><span style="color: #008080;">16</span>                 <span style="color: #0000ff;">if</span>(i%j==0<span style="color: #000000;">){
+</span><span style="color: #008080;">17</span>                     isPrime = <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+</span><span style="color: #008080;">18</span>                     <span style="color: #0000ff;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">            }    
+</span><span style="color: #008080;">21</span>             <span style="color: #0000ff;">if</span><span style="color: #000000;">(isPrime){
+</span><span style="color: #008080;">22</span>                 System.out.println(i+"是质数"<span style="color: #000000;">);}
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">24</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">25</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><span style="font-family: 宋体; font-size: 18pt;">求两个整数的最大公约数</span></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Scanner;
+</span><span style="color: #008080;"> 2</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> CommonDivisor  {
+</span><span style="color: #008080;"> 3</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;"> 4</span>         Scanner scanner = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Scanner(System.in);
+</span><span style="color: #008080;"> 5</span>         System.out.println("请输入第一个整数："<span style="color: #000000;">);
+</span><span style="color: #008080;"> 6</span>         <span style="color: #0000ff;">int</span> first =<span style="color: #000000;"> scanner.nextInt();
+</span><span style="color: #008080;"> 7</span>         System.out.println("请输入第二个整数："<span style="color: #000000;">);
+</span><span style="color: #008080;"> 8</span>         <span style="color: #0000ff;">int</span> second =<span style="color: #000000;"> scanner.nextInt();
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">        scanner.close();
+</span><span style="color: #008080;">10</span>         <span style="color: #008000;">//</span><span style="color: #008000;"> 从两个整数中较小的数开始</span>
+<span style="color: #008080;">11</span>         <span style="color: #0000ff;">int</span> start = first &gt; second ?<span style="color: #000000;"> second : first;
+</span><span style="color: #008080;">12</span>         <span style="color: #0000ff;">int</span> n = 1<span style="color: #000000;">;
+</span><span style="color: #008080;">13</span>         <span style="color: #0000ff;">for</span> (n = start; n &gt;= 1; n--<span style="color: #000000;">) {
+</span><span style="color: #008080;">14</span>             <span style="color: #008000;">//</span><span style="color: #008000;"> 判断n是否是两个整数的约数</span>
+<span style="color: #008080;">15</span>             <span style="color: #0000ff;">if</span> ((first % n == 0) &amp;&amp; (second % n == 0<span style="color: #000000;">))
+</span><span style="color: #008080;">16</span>                 <span style="color: #0000ff;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">18</span>         System.out.println(first + "和" +<span style="color: #000000;"> second
+</span><span style="color: #008080;">19</span>                     + "的最大公约数为：" +<span style="color: #000000;"> n);
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">   }
+</span><span style="color: #008080;">21</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(3250529,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;5dd42193-49f8-e211-8d02-90b11c0b17d6&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/grape/" target="_blank"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/grape/">提子呀呀</a><br>
+            <a href="https://home.cnblogs.com/u/grape/followees">关注 - 0</a><br>
+            <a href="https://home.cnblogs.com/u/grape/followers">粉丝 - 5</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;5dd42193-49f8-e211-8d02-90b11c0b17d6&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(3250529,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+    <div class="buryit" onclick="votePost(3250529,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/grape/p/3246499.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/grape/p/3246499.html" title="发布于2013-08-08 19:59">2013.8.8递归</a><br><a href="https://www.cnblogs.com/grape/p/3250711.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/grape/p/3250711.html" title="发布于2013-08-10 21:19">java面向对象</a><br></div>
+</div>
+
+
+		</div>
+		<p class="postfoot">
+			posted on <span id="post-date">2013-08-10 19:58</span> <a href="https://www.cnblogs.com/grape/">提子呀呀</a> 阅读(<span id="post_view_count">4417</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=3250529" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/grape/p/3250529.html#" onclick="AddToWz(3250529);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=159286,cb_entryId=3250529,cb_blogApp=currentBlogApp,cb_blogUserGuid='5dd42193-49f8-e211-8d02-90b11c0b17d6',cb_entryCreatedDate='2013/8/10 19:58:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/grape/p/3250529.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/grape/p/3250529.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="https://www.grapecity.com.cn/developer/spreadjs?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=SpreadJS&amp;utm_campaign=community" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-SpreadJS&#39;)">【前端】SpreadJS表格控件，可嵌入系统开发的在线Excel</a><br><a href="https://q.cnblogs.com/" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-博问&#39;)">【推荐】程序员问答平台，解决您开发中遇到的技术难题</a><br></div>
+<div id="opt_under_post"></div>
+<script async="async" src="./java经典练习题 - 提子呀呀 - 博客园_files/gpt.js.下载"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+</div>
+<div id="under_post_news"><div class="recomm-block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/shanhaiyang/archive/2011/04/27/2357068.html" target="_blank" onclick="clickRecomItmem(2357068)">[Java] 练习题015: 输入三个整数x,y,z，请把这三个数由小到大输出。</a><br>·  <a href="https://www.cnblogs.com/fan-xiaofan/p/4841165.html" target="_blank" onclick="clickRecomItmem(4841165)">编写多个数字相加的java程序</a><br>·  <a href="https://www.cnblogs.com/cycanfly/p/5209696.html" target="_blank" onclick="clickRecomItmem(5209696)">JAVA的语法基础 练习题</a><br>·  <a href="https://www.cnblogs.com/bjanzhuo/archive/2013/02/22/3575945.html" target="_blank" onclick="clickRecomItmem(3575945)">JAVA经典算法40题(15)</a><br>·  <a href="https://www.cnblogs.com/xyk1987/p/8329306.html" target="_blank" onclick="clickRecomItmem(8329306)">运算符</a><br></div></div>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;"></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/626509/" target="_blank">海外废弃的ofo共享单车有了新用途：捐给缅甸学生</a><br> ·  <a href="https://news.cnblogs.com/n/626508/" target="_blank">外媒：Facebook加密货币本月或亮相 允许员工将其作为工资</a><br> ·  <a href="https://news.cnblogs.com/n/626507/" target="_blank">字节跳动12.6亿获30%股权 虎扑：管理层仍是最大股东</a><br> ·  <a href="https://news.cnblogs.com/n/626506/" target="_blank">软银“愿景基金”已投资近700亿美元 回报率高达62%</a><br> ·  <a href="https://news.cnblogs.com/n/626505/" target="_blank">Science：非洲鼹鼠不怕疼，是演化加了什么buff？</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+<li>
+<a id="blog_nav_sitehome" href="https://www.cnblogs.com/">博客园</a></li>
+<li>
+<a id="blog_nav_myhome" class="two_words" href="https://www.cnblogs.com/grape/">首页</a></li>
+<li>
+<a id="blog_nav_newpost" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li>
+<a id="blog_nav_contact" accesskey="9" class="two_words" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%8F%90%E5%AD%90%E5%91%80%E5%91%80">联系</a></li>
+<li>
+<a id="blog_nav_rss" class="two_words" href="https://www.cnblogs.com/grape/rss">订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/grape/rss"><img src="./java经典练习题 - 提子呀呀 - 博客园_files/xml.gif" alt="订阅"></a>
+</li>
+<li>
+<a id="blog_nav_admin" class="two_words" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/05/01&#39;);return false;">&lt;</a></td><td align="center">2019年6月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/07/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td class="CalTodayDay" align="center">6</td><td align="center">7</td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalWeekendDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+<meta name="vs_showGrid" content="False">
+
+<h3>公告</h3>
+<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/grape/">提子呀呀</a><br>园龄：<a href="https://home.cnblogs.com/u/grape/" title="入园时间：2013-07-29">5年10个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/grape/followers/">5</a><br>关注：<a href="https://home.cnblogs.com/u/grape/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;5dd42193-49f8-e211-8d02-90b11c0b17d6&#39;)">+加关注</a></div><script>getFollowStatus('5dd42193-49f8-e211-8d02-90b11c0b17d6')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+
+<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/grape/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/grape/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/grape/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/grape/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/grape/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+		<h3>随笔分类</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/grape/category/507406.html">java学习笔记(15)</a></li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/grape/archive/2013/09.html">2013年9月 (3)</a></li>
+			
+				<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/grape/archive/2013/08.html">2013年8月 (14)</a></li>
+			
+				</ul>
+			
+	</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap" style="display: none;">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/grape/p/3250529.html">1. java经典练习题(4417)</a></li><li><a href="https://www.cnblogs.com/grape/p/3236045.html">2. 二进制补码(1335)</a></li><li><a href="https://www.cnblogs.com/grape/p/3266681.html">3. java面向对象练习题(884)</a></li><li><a href="https://www.cnblogs.com/grape/p/3305994.html">4. java习题(815)</a></li><li><a href="https://www.cnblogs.com/grape/p/3254372.html">5. 继承的时候，java对象初始化过程(431)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap" style="display: none;">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/grape/p/3250529.html">1. java经典练习题(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="https://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © 提子呀呀
+</p>
+</div>
+</div>
+
+
+
+
+</body></html>
